@@ -1,0 +1,3 @@
+Sum nechetnyh = 250000
+Sum chetnyh = 250500
+Raznica - 500
