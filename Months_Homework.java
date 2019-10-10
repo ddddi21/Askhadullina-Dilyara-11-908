@@ -1,4 +1,4 @@
-class OddEvenSum1 {
+class Months_Homework {
 	 public static void main ( String[] args) {
 		 int mounth = 7;
 		 switch (mounth) {

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Reshetka {
+class Triangle_Homework {
 	public static void main (String[] args) {
 		Scanner r = new Scanner (System.in);
 		int rr = r.nextInt();

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class pi {
+class pi_Homework {
 	public static void main (String[] args) {
 		Scanner x = new Scanner (System.in);
 		int n = x.nextInt();
