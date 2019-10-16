@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Matrix17 {
+class Matrix17_hw {
 	public static void main (String[] args) {
 		System.out.println("Enter M:");
 		Scanner sc = new Scanner(System.in);

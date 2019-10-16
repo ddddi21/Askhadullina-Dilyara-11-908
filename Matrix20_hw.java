@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 
-class Matrix20 {
+class Matrix20_hw {
 	public static void main(String[] args) {
 		System.out.println("Enter M:");
 		Scanner sc = new Scanner(System.in);
