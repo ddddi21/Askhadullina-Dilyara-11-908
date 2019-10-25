@@ -5,7 +5,7 @@ public class Matrix_Homework {
         int [][] mas = new int [m][n];
         for (int i = 0; i<m; i++) {
             for (int j = 0; j<n; j++) {
-                mas [i][j] = (int) (Math.random() * 100);
+                mas [i][j] = (int) (Math.random() * 7);
                 System.out.printf("%4d", mas[i][j]);
             }
             System.out.println();
@@ -96,6 +96,41 @@ public class Matrix_Homework {
             }
 
     }
+    public static void matrix41(int[][]mas) {
+        int [] mas_num = new int[mas[0].length];
+        int max_num = 0;
+
+        int st = 0;
+        for (int i = 0; i < mas[0].length; i++) {
+            mas_num[i] = 0;
+        }
+        System.out.println("");
+        int localValue = 1;
+        for (int i = 0; i < mas[0].length ; i++) {
+            for (int j = 0; j < mas.length;j++) {
+                for (int k = 0; k < mas.length; k++) {
+                    if ((mas[j][i] == mas[k][i]) & (k>=j)) {
+                        localValue++;
+                    }
+                }
+                if (localValue > mas_num[i]) {
+                    mas_num[i] = localValue;
+                }
+                localValue = 1;
+            }
+
+        }
+        for (int i = 0; i < mas[0].length; i++) {
+            if (mas_num[i] > max_num) {
+                max_num = mas_num[i];
+                st = i;
+            }
+        }
+        if (max_num == 0)
+            System.out.println("Нет одинаковых элементов в столбцах");
+
+        else System.out.println("Столбец:" + st);
+    }
 
 
     public static void main(String [] args) {
@@ -110,12 +145,14 @@ public class Matrix_Homework {
         int k2 = sc.nextInt()-1;
         int [][] mas = new int [m][n];
         mas = enter_mass(m,n);
+        matrix41(mas);
         matrix20(mas);
         matrix17(mas,k);
         matrix27(mas);
         matrix47(mas,k,k2);
         matrix61(mas,k);
         matrix88(mas);
+
 
 
     }
