@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class String_HW {
 
     public static int string41( String s) {
-        String [] pr;
+        String [] pr;   // зачем массив?
         pr = s.split("\\s+");
           return pr.length;
     }
@@ -32,7 +32,7 @@ public class String_HW {
 
     public static int string54 (String s) {
         int k = 0;
-        for ( String str :s.split("а|А|О|о|Е|е|И|и|Я|я|Ы|ы|У|у|Ю|ю|Э|э|Ё|Ё/gmx")) {
+        for ( String str :s.split("а|А|О|о|Е|е|И|и|Я|я|Ы|ы|У|у|Ю|ю|Э|э|Ё|Ё/gmx")) { // попробуйте в середину текста добавить "Ё/gmx".
             k++;
         }
         return k;
@@ -40,7 +40,7 @@ public class String_HW {
 
     public static void string57 (String s) {
         for (String sl : s.split("\\s+")) {
-            System.out.print(sl);
+            System.out.print(sl); // Строка не меняется(
             System.out.print(" ");
         }
         System.out.println();
