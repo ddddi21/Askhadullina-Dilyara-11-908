@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class String_HW {
 
     public static int string41( String s) {
-        String [] pr;   // зачем массив?
+        String [] pr;
         pr = s.split("\\s+");
           return pr.length;
     }
