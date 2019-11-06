@@ -4,11 +4,20 @@ import java.util.regex.Pattern;
 
 public class String_HW {
 
+    /**
+     *  зачтено
+     *
+     */
     public static int string41( String s) {
         String [] pr;
         pr = s.split("\\s+");
           return pr.length;
     }
+
+    /**
+     *  зачтено
+     *
+     */
     public static void string42 (String s) {
         String [] pr;
         int k = 0;
@@ -24,6 +33,10 @@ public class String_HW {
 
     }
 
+    /**
+     *  зачтено
+     *
+     */
     public static void string52 (String s) {
         String newStr;
         for (String str : s.split("\\s+")) {
@@ -34,15 +47,23 @@ public class String_HW {
         System.out.println();
     }
 
+    /**
+     *  1/2
+     *
+     */
     public static int string54 (String s) {
         int k = 0;
-        for ( String str :s.split("а|А|О|о|Е|е|И|и|Я|я|Ы|ы|У|у|Ю|ю|Э|э|Ё|Ё/gmx")) {
+        for ( String str :s.split("а|А|О|о|Е|е|И|и|Я|я|Ы|ы|У|у|Ю|ю|Э|э|Ё|Ё/gmx")) {  // регулярное выражение с ошибкой, последний кусок "Ё/gmx" будет искать в точности данное вхождение. То что вы пытались добавить модификаторы режима понятно, но в Jave они так не задаются. В данном случае уместнее использовать конструкцию символьной группировки [...]. Хотя и ваш вариант будет работать, если последнюю часть заменить на "ё".
             k++;
         }
         return k;
     }
 
-    public static void string57 (String s) {
+    /**
+     *  зачтено
+     *
+     */
+    public static void string57 (String s) { // здесь все верно, за исключением того что в результате должны получить строку.
         for (String sl : s.split("\\s+")) {
             System.out.print(sl);
             System.out.print(" ");
@@ -50,8 +71,12 @@ public class String_HW {
         System.out.println();
     }
 
+    /**
+     *  1/2
+     *
+     */
     public static void string58 (String s) {
-        Pattern sub = Pattern.compile("(?=\\w+\\.).+") ;
+        Pattern sub = Pattern.compile("(?=\\w+\\.).+") ; // здесь тоже регулярное выражение не верно. Попробуйте "C:\Program Files\Java\jdk1.8.0_221\bin\java.exe", оно выдаст jdk1. Также не сработает если имя файла будет с точкой.
         Matcher find = sub.matcher(s);
         while (find.find()) {
             System.out.println(s.substring(find.start(), s.indexOf('.')));
@@ -60,8 +85,12 @@ public class String_HW {
         }
     }
 
+    /**
+     *  1/2
+     *
+     */
     public static void string59 (String s){
-        Pattern sub = Pattern.compile("(?<=\\.)(.+)$") ;
+        Pattern sub = Pattern.compile("(?<=\\.)(.+)$") ;  // используя пример выше получим "8.0_221\bin\java.exe"
         Matcher find = sub.matcher(s);
         while (find.find()) {
             System.out.println(s.substring(find.start()));
@@ -70,7 +99,11 @@ public class String_HW {
 
     }
 
-    public static void string69 (String s) {
+    /**
+     *  зачтено
+     *
+     */
+    public static void string69 (String s) { 
         Pattern otk = Pattern.compile("\\(");
         Pattern zak = Pattern.compile("\\)");
         Matcher find_otk = otk.matcher(s);
@@ -116,4 +149,12 @@ public class String_HW {
         string59(s);
         string69(s);
     }
+
+
+
+    /**
+     *  Итого 2 * (5/8 + (3/2)/8) = 1,625
+     *  
+     *  
+     */
 }
