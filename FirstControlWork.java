@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
  * Казанский (Приволжский) федеральный университет
  *
  *  Контрольная работа №1.
+ * Итого 4,5 балла.
  */
 
 public class FirstControlWork {
@@ -30,6 +31,7 @@ public class FirstControlWork {
      * 1.
      * Создать массив до заданного числа такой, что каждый элемент больше предыдущего на 7.
      * Первое значение случайное от 0 до 100.
+     * Зачтено, хотя массив не соответствует условиям задачи.
      */
     public static int[] getSevensArray(int limit) {
         int fr = (int) (Math.random()*100);
@@ -44,6 +46,7 @@ public class FirstControlWork {
     /**
      * 2.
      * Дан массив. Найти второй самый большой элемент.
+     * Ответ не верный.  0,5.
      */
     public static int getSecondLargest(int[] array) {
         int max1;
@@ -63,6 +66,7 @@ public class FirstControlWork {
                    max2 = b;
                 }
             }
+            // ошибка здесь
             if (array[i] > array[max2]) {
                 max2 = i;
             }
@@ -75,6 +79,7 @@ public class FirstControlWork {
      * 3.
      * Написать метод сравнивающий два числа с плавающей точкой с точностью до двух разрадов.
      * @return boolean
+     * Ответ не верный. Строки сравниваются методом equals(). 0,5.
      */
     public static  boolean isDoubleEquals (double a, double b){
          if (String.format("%.2f",a ) == String.format("%.2f",b )) {
@@ -90,11 +95,12 @@ public class FirstControlWork {
      * Число является простым является простым,
      * если оно больше 1 и при этом делится без остатка только на 1 и на себя.
      * Единица не простое число.
+     * Ход мыслей понятен, но условия все же не верны. 0,5.
      */
     public static boolean isPrime (int x) {
         boolean b = false;
         for (int i = 1; i < x ; i++) {
-            if ((x > 1) && ((x%1) == 0) && (x/i ==0)) {
+            if ((x > 1) && ((x%1) == 0) && (x/i ==0)) { // условия не верные
                 b = false;
             } else {
                 b = true;
@@ -110,6 +116,7 @@ public class FirstControlWork {
      * 5.
      * Даны две строки: слово и разделитель, вывести строку содержащую количество вхождений слова, разделенноый разделителем.
      * Например, ("Word", "X", 3) => WordXWordXWord.
+     * Ответ не верный.
      */
     public static String repeatSeparator (String word, String sep, int count) {
         String str = "";
@@ -140,6 +147,7 @@ public class FirstControlWork {
      * Go to the store and buy some more, 99 bottles of beer on the wall."
      *
      * Результат записать в файл.
+     * Есть не существенные ошибки в тексте песни. Зачтено.
      */
     public static void singSong () throws IOException {
         FileWriter file = new FileWriter("99 Bottles of Beer on the Wal.txt");
@@ -178,6 +186,7 @@ public class FirstControlWork {
      * 5. отбрасываем десятки и отнимаем из 10, и получаем контрольную цифру.
      * Если последняя цифра числа из п.4 = 0, то контрольная цифра равна нулю.
      * @return boolean
+     * Зачтено.
      */
     public static boolean isISBNValid (String str) {
         int sum =0;
@@ -228,8 +237,11 @@ public class FirstControlWork {
      *                                 s: 1
      *                                 v: 1
      *                                 w: 1".
+     * Ответ не верный.
+     * Если вы используете коллекции, то должны знать что если в коллекции уже есть объект с подобным ключом, то он перезаписывается.
+     * В любом случае, их нельзя было использовать.
      */
-    public static String lettersFrequency (String str) {
+    public static void lettersFrequency (String str) {
         Map<Character, Integer> letters = new HashMap<Character, Integer>();
         for (int i = 0; i < str.length(); i++) {
             if (letters.containsKey(str.charAt(i))) {
@@ -246,12 +258,12 @@ public class FirstControlWork {
             System.out.print(": ");
             System.out.print(item.getValue());
             System.out.println();
-        } 
+        }
     }
 
     public static void main(String[] args) throws IOException {
         int [] sevens;
-        System.out.println("Массив \"семёрок\": " + (sevens = getSevensArray(200)));
+        System.out.println("Массив \"семёрок\": " + (arrayToString(sevens = getSevensArray(200))));
         System.out.printf("Вторым самым большим элементом является %d.%n", getSecondLargest(sevens));
 
         /* TODO:
@@ -259,9 +271,9 @@ public class FirstControlWork {
             Если является, записать в массив, затем вывести эти числа и их количество.
             Для вывода используйте готовый метод arrayToString.
          */
-        int [] primes = new int[0];
-        for (int value : sevens) {
-
+        int[] primes = {2, 113, 115};
+        for (int value : primes) {
+            System.out.println(isPrime(value));
         }
 //        int [] b = new int[30];
 //        int i = 0;
@@ -278,11 +290,12 @@ public class FirstControlWork {
 //        }
 //        int [] primes = new int [count];
 //        while (b[i])
+
         if (primes.length > 0) System.out.printf("Простые числа: %s : %d.%n", arrayToString(primes), primes.length);
         else System.out.println("В массиве нет простых чисел.");
 
-        double a = Math.random() * 100;
-        double b = Math.random() * 100;
+        double a = 1.234;//Math.random() * 100;
+        double b = 1.2345; //Math.random() * 100;
         System.out.printf(isDoubleEquals(a, b) ? "Числа %f и %f равны, с точностью до эпсилон = 0,01.%n" : "Числа %f и %f не равны.%n", a, b);
 
         System.out.println("('Word', 'X', 3) => " + repeatSeparator("Word", "X", 3));
@@ -292,12 +305,20 @@ public class FirstControlWork {
             Прочитайте из файла, полученного в предыдущем задании, текст и вычислите для него частотный словарь букв.
          */
         String song = "";
-        System.out.printf("Частотный словарь букв: %n%s", lettersFrequency(song));
+        lettersFrequency("abba");
+//        System.out.printf("Частотный словарь букв: %n%s", lettersFrequency(song));
 
         /* TODO:
             Прочитайте файл 'references.txt', в нем содержится список литературы, на каждоый строке новая запись.
             В третьей строке ISBN с ошибкой.
          */
+
+        // допустим здесь подаются очищенные ISBN.
+        for (String str :
+                new String[]{"9789857058303", "9785977507356", "9785977507355"}) {
+            System.out.printf("%s - %s.%n", str, isISBNValid(str));
+        }
+
         String filename = "references.txt";
         String entry = "";
        // System.out.printf("Список литературы:%n%s%n", getBookName(entry));
