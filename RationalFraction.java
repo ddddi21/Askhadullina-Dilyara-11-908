@@ -159,10 +159,10 @@ public class RationalFraction {
     }
 
     public double value() {
-        return 1.0 * x / y; //???
+        return 1.0 * x / y;
     }
 
-    public boolean equals(RationalFraction fraction) {
+    public boolean equals (RationalFraction fraction) {
         this.reduce();
         fraction.reduce();
         if ((this.x == fraction.x) && (this.y == fraction.y)) {
@@ -171,13 +171,14 @@ public class RationalFraction {
             return false;
     }
 
-//    public int numberPart() {
-//
-//    }
+    public int numberPart() {
+        int  w= (int)value();
+         return w;
+    }
 
 
     public static void main (String [] args) {
-        RationalFraction fraction = new RationalFraction(3,2);
+        RationalFraction fraction = new RationalFraction(1,9);
         RationalFraction fraction2 = new RationalFraction(1,1);
 //        fraction.reduce();
 //        System.out.println(fraction);
@@ -191,8 +192,9 @@ public class RationalFraction {
 //        System.out.println(fraction);
 //        fraction.div2(fraction2);
 //        System.out.println(fraction);
-        System.out.println(fraction.value());
+//        System.out.println(fraction.value());
 //        System.out.println(fraction.equals(fraction2));
+        System.out.println(fraction.numberPart());
 
     }
 }
