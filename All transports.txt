@@ -1,8 +1,0 @@
-3
-4
-white
-model:BMW color:white maxSpeed:300 power100.0 TC:32.0 (x,y):java.awt.Point[x=6,y=8]model:BMW color:black maxSpeed:300 power100.0 TC:32.0 (x,y):java.awt.Point[x=6,y=8] SitPlace: 40.0 
-model:BMW color:black maxSpeed:300 power100.0 TC:32.0 (x,y):java.awt.Point[x=3,y=4] SitPlace: 40.0 
-Use: true 
-
-Process finished with exit code 0
