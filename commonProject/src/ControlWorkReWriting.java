@@ -12,15 +12,15 @@ public class ControlWorkReWriting {
      * Контрольная работа №3.
      *
      * Максимальный балл 10.
-     * Итого:
+     * Итого:10
      */
 
     /**
      * 1. Проверить является ли строка палиндромом.
      * Проверка:
-     * метод:
-     * тест:
-     * Итого (макс. 2 балла):
+     * метод:+
+     * тест:+
+     * Итого (макс. 2 балла):2
      */
     public static boolean isPalindrome(String s) {
         for (int i = 0; i < s.length() / 2; ++i) {
@@ -36,9 +36,9 @@ public class ControlWorkReWriting {
      * 2. Дана строка, сложить все числа в ней. Если чисел нет выводим 0. Протестировать.
      * <p>
      * Проверка:
-     * метод:
-     * тест:
-     * Итого (макс. 2 балла):
+     * метод:+
+     * тест:+
+     * Итого (макс. 2 балла):2
      */
     public static Number fromTextSum(String s) {
         Pattern p = Pattern.compile("(\\d+)");
@@ -58,9 +58,9 @@ public class ControlWorkReWriting {
      * 3. Написать метод генерирующий сложный пароль (цифры, символы и латинский алфавит).
      * <p>
      * Проверка:
-     * метод:
-     * тест:
-     * Итого (макс. 2 балла):
+     * метод: 1
+     * тест: 1
+     * Итого (макс. 2 балла):2
      */
     public static String generatePassword() {
         String password = "";
@@ -69,7 +69,7 @@ public class ControlWorkReWriting {
         for (int i = 0; i < passSize; i++) {
             int choose = (int) (Math.random() * 3);
             if (choose == 0) {
-                password += (char) ((int) (Math.random() * 22) + START_CHAR);
+                password += (char) ((int) (Math.random() * 22) + START_CHAR); // почему 22 и где заглавные буквы
             } else if (choose == 1) {
                 password += (char) ((int) (Math.random() * 5) + 33);
             } else {
@@ -83,11 +83,11 @@ public class ControlWorkReWriting {
      * 4. Написать метод, который сравнивает две строки и выводит 0 если они равны, 1 если лексиграфически
      * первая находится раньше второй, -1 в обратном случае.
      * Проверка:
-     * метод:
-     * тест:
-     * Итого (макс. 2 балла):
+     * метод:1
+     * тест:1
+     * Итого (макс. 2 балла):2
      */
-     public static int compareStrings(String str1, String str2) {
+    public static int compareStrings(String str1, String str2) {
 //        char[] s = str1.toCharArray();
 //        char[] s2 = str2.toCharArray();
 //        int i = 0;
@@ -111,24 +111,24 @@ public class ControlWorkReWriting {
 //            }
 //        }
 //        return 0;
-         int compare = 0;
-         int size = 0;
-         if (str1.length()-1 >= str2.length()-1){
-             size = str2.length()-1;
-         } else size = str1.length()-1;
-         for (int i = 0; i <= size; i++) {
-             int symbolFirst = (int)str1.charAt(i);
-             int symbolSecond = (int)str2.charAt(i);
-             if (symbolFirst < symbolSecond) return 1;
-             else if(symbolFirst > symbolSecond) return -1;
-         }
-         if (str1.length() < str2.length() && str1.length() != str2.length()) {
-             return 1;
-         } else if (str1.length() > str2.length() && str1.length() != str2.length()){
-             return -1;
-         }
+        int compare = 0;
+        int size = 0;
+        if (str1.length()-1 >= str2.length()-1){
+            size = str2.length()-1;
+        } else size = str1.length()-1;
+        for (int i = 0; i <= size; i++) {
+            int symbolFirst = (int)str1.charAt(i);
+            int symbolSecond = (int)str2.charAt(i);
+            if (symbolFirst < symbolSecond) return 1;
+            else if(symbolFirst > symbolSecond) return -1;
+        }
+        if (str1.length() < str2.length() && str1.length() != str2.length()) {
+            return 1;
+        } else if (str1.length() > str2.length() && str1.length() != str2.length()){
+            return -1;
+        }
 
-         return 0;
+        return 0;
     }
 
 
@@ -143,9 +143,9 @@ public class ControlWorkReWriting {
      * даны числа A, B, C, D.
      * <p>
      * Проверка:
-     * метод:
-     * тест:
-     * Итого (макс. 2 балла):
+     * метод:1
+     * тест:1
+     * Итого (макс. 2 балла):2
      */
 
 
@@ -168,20 +168,20 @@ public class ControlWorkReWriting {
 //        }
 //        return min_nod;
 //    }
-        static void getGCD (int a, int b, int c, int d) {
-            System.out.println(gCD(a, b));
-            System.out.println(gCD(a, c));
-            System.out.println(gCD(a, d));
-        }
+    static void getGCD (int a, int b, int c, int d) {
+        System.out.println(gCD(a, b));
+        System.out.println(gCD(a, c));
+        System.out.println(gCD(a, d));
+    }
 
-        static int gCD (int a, int b) {
-            if (b == 0){
-                return a;
-            }
-            else {
-                return gCD(b, a % b);
-            }
+    static int gCD (int a, int b) {
+        if (b == 0){
+            return a;
         }
+        else {
+            return gCD(b, a % b);
+        }
+    }
 
     public static void main(String[] args) {
         String s = "kiik";
