@@ -11,7 +11,7 @@ public class WordSet {
             list.add(arr[i]);
         }
         list.removeSame();
-        list.sort(list);
+        list.sort();
     }
 
     public WordSet() {
@@ -26,7 +26,7 @@ public class WordSet {
                 list.add(w2.list.getData(i));
             }
         }
-        list.sort(list);
+        list.sort();
         list.removeSame();
     }
 
@@ -37,7 +37,7 @@ public class WordSet {
         if (cur == null) {
             return ("нулевой список");
         } else {
-            while (cur.next!=null) {
+            while (cur.next != null) {
                 answer += cur.data + " " + "->" + " ";
                 cur = cur.next;
             }
@@ -71,7 +71,7 @@ public class WordSet {
             if (!k) {
                 list.getLast().next = cur;
                 cur.next = null;
-                list.sort(list);
+                list.sort();
             }
         } else list.setHead(new Element(word, null));
     }

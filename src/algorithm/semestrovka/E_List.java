@@ -77,15 +77,15 @@ public class E_List {
 
 
 
-    public void sort(E_List list){
-        for (int i = 0; i <list.size(); i++) {
-            for (int j = i; j <list.size() ; j++) {
-                String s = list.getData(i);
-                String s2 = list.getData(j);
+    public void sort(){
+        for (int i = 0; i < this.size(); i++) {
+            for (int j = i; j < this.size() ; j++) {
+                String s = this.getData(i);
+                String s2 = this.getData(j);
                 if (s2.compareTo(s) < 0) {
-                    String s3 = list.getData(i);
-                    list.setData(i,s2);
-                    list.setData(j,s3);
+                    String s3 = this.getData(i);
+                    this.setData(i,s2);
+                    this.setData(j,s3);
                 }
             }
         }
@@ -117,11 +117,11 @@ public class E_List {
             for (int i = 0; i < index - 1; i++) {
                 cur = cur.next;
             }
-            if  (cur.next!=null) {
+            if  (cur.next != null) {
                 cur.next = cur.next.next;
             } else cur = null;
         } else
-        if (cur.next!= null && index == 1){
+        if (cur.next != null && index == 1){
             cur.next = cur.next.next;
         } else
         if (index == 0) {
